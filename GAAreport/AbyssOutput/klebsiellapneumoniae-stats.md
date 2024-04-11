@@ -1,0 +1,5 @@
+n    |n:500  |L50  |min  |N75    |N50     |N25     |E-size  |max     |sum      |name
+---  |---    |---  |---  |---    |---     |---     |---     |---     |---      |---
+554  |211    |26   |526  |33741  |69248   |110517  |73258   |174302  |5487030  |klebsiellapneumoniae-unitigs.fa
+391  |99     |15   |539  |80311  |121239  |173997  |157857  |526029  |5564137  |klebsiellapneumoniae-contigs.fa
+367  |90     |14   |539  |80311  |142247  |191661  |165392  |526029  |5566315  |klebsiellapneumoniae-scaffolds.fa
