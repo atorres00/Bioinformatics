@@ -1,0 +1,28 @@
+# Activating qiime2
+conda activate qiime2-amplicon-2024.2
+
+
+# demultiplexing sequences in .qza file
+qiime demux emp-single \
+  --i-seqs emp-single-end-sequences.qza \
+  --m-barcodes-file sample-metadata.tsv \
+  --m-barcodes-column barcode-sequence \
+  --o-per-sample-sequences demux.qza \
+  --o-error-correction-details demux-details.qza
+
+# Creating .qzv file from .qza (available to be used for viewing) 
+qiime demux summarize \
+  --i-data demux.qza \
+  --o-visualization demux.qzv
+
+# DADA2 forward and reverse feeds
+qiime dada2 denoise-paired\
+--i-demultiplexed-seqs demux.qza\
+--p-trim-left-f 0 \
+--p-trunc-len-f 200 \
+--p-trim-left-r 0 \
+--p-trunc-len-r 200 \
+--o-representative-sequences rep-seqs-dada2.qza \
+--o-table table-dada2.qza \
+--o-denoising-stats stats-dada2.qza
+
